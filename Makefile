@@ -110,6 +110,8 @@ endif   # LP64
 
 JDKARCH=$(LIBARCH:i386=i586)
 
+BINUTILS = binutils_src/
+
 ifeq            ($(BINUTILS),)
 # Pop all the way out of the workspace to look for binutils.
 # ...You probably want to override this setting.
