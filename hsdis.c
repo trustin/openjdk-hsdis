@@ -29,11 +29,13 @@
 
 #include "hsdis.h"
 
-#include <sysdep.h>
-#include <libiberty.h>
+// #include <sysdep.h>
+#include <libiberty/libiberty.h>
 #include <bfd.h>
 #include <dis-asm.h>
 #include <inttypes.h>
+
+#include <string.h>
 
 #ifndef bool
 #define bool int
