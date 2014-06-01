@@ -1,3 +1,0 @@
-[submodule "binutils_src"]
-	path = binutils_src
-	url = git://sourceware.org/git/binutils.git
