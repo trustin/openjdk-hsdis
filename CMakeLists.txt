@@ -20,7 +20,7 @@ find_package(BFD REQUIRED)
 find_package(OPCODES REQUIRED)
 
 add_library(hsdis SHARED hsdis.c)
-set_target_properties(hsdis PROPERTIES COMPILE_FLAGS "-Wall -Werror -Wpendantic -fPIC")
+set_target_properties(hsdis PROPERTIES COMPILE_FLAGS "-Wall -Werror -Wpendantic -fPIC -std=c99")
 set_target_properties(hsdis PROPERTIES COMPILE_FLAGS ${ARCH_FLAG})
 set_target_properties(hsdis PROPERTIES LINK_FLAGS "-fPIC")
 
