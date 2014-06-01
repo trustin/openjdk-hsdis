@@ -175,6 +175,7 @@ static const char* format_insn_close(const char* close,
   case dis_condjsr:     type = "condjsr";    break;
   case dis_dref:        type = "dref";       break;
   case dis_dref2:       type = "dref2";      break;
+  case dis_noninsn:     type = "noninsn";    break;
   }
 
   strcpy(buf, close);
