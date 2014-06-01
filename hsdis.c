@@ -36,6 +36,7 @@
 #include <inttypes.h>
 
 #include <string.h>
+#include <errno.h>
 
 #ifndef bool
 #define bool int
