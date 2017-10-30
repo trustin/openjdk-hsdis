@@ -26,6 +26,7 @@ set_target_properties(${target_name} PROPERTIES COMPILE_FLAGS "-Wall -Werror -Wp
 set_target_properties(${target_name} PROPERTIES PREFIX "")
 set_target_properties(${target_name} PROPERTIES LINK_FLAGS "-fPIC")
 
+include_directories(${BFD_INCLUDE_DIR} ${LIBIBERTY_INCLUDE_DIR} ${OPCODES_INCLUDE_DIR})
 target_link_libraries(${target_name} ${BFD_LIBRARY} ${OPCODES_LIBRARY} )
 
 find_package(JNI)

@@ -1,1 +1,7 @@
-build
+/arch.c
+/build
+/Makefile
+/CMakeCache.txt
+/CMakeFiles
+/cmake_install.cmake
+/hsdis-*.so

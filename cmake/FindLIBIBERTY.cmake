@@ -7,7 +7,7 @@ else()
 endif()
 
 find_library(LIBIBERTY_LIBRARY NAMES ${LIBIBERTY_SEARCHORDER})
-find_path(LIBIBERTY_INCLUDE_DIR dis-asm.h)
+find_path(LIBIBERTY_INCLUDE_DIR libiberty.h PATHS /usr/include /usr/include/libiberty)
 
 if(LIBIBERTY_INCLUDE_DIR AND LIBIBERTY_LIBRARY)
     set(LIBIBERTY_FOUND TRUE)

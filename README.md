@@ -5,52 +5,38 @@ OpenJDK disassembler plugin for HotSpot JVM (based on binutils)
 
 History
 -------
-Recent versions of HotSpot (including current builds of JDK7 and JDK6)
+Recent versions of HotSpot (including current builds of JDK 8, 7 and 6)
 can load a plug-in disassembler for diagnosing code quality.
 
 This plugin comes from actual OpenJDK source repository (and is based on binutils
 tools for disassembler).
 
-Why this repository ?
----------------------
+Why this repository?
+--------------------
 This is just a "repackaging" of original hsdis based on source code from
-http://hg.openjdk.java.net/jdk7u/jdk7u/hotspot/file/tip/src/share/tools/hsdis/
+http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/8015f8f73cde/src/share/tools/hsdis
+
+Build
+-----
+```
+git clone https://github.com/trustin/openjdk-hsdis.git
+cd openjdk-hsdis
+cmake .
+make
+sudo make install
+```
 
 Build Debian package
 --------------------
-+ Download this version of hsdis:
-```
-git clone git://github.com/drazzib/openjdk-hsdis.git
-cd openjdk-hsdis
-```
-
-+ Install build-dependencies
 ```
 sudo apt-get install build-essential devscripts
 sudo mk-build-deps -i -r
-```
 
-+ Build package
-```
+git clone https://github.com/trustin/openjdk-hsdis.git
+cd openjdk-hsdis
 debuild -b -uc -us
-```
 
-+ Install package
-```
 sudo debi --with-depends
-sudo apt-get --purge remove openjdk-hsdis-build-deps
-```
-
-Enjoy your disassembler
------------------------
-```
-JDK7=/usr/lib/jvm/java-7-openjdk-amd64
-XJAVA="$JDK7/bin/java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly"
-$XJAVA -Xcomp -cp ~/Classes hello
-$XJAVA -Xcomp -cp ~/Classes -XX:PrintAssemblyOptions=hsdis-print-bytes hello
-$XJAVA -XX:-PrintAssembly -XX:+PrintStubCode
-$XJAVA -XX:-PrintAssembly -XX:+PrintInterpreter
-$XJAVA -XX:-PrintAssembly -XX:+PrintSignatureHandlers
 ```
 
 License
